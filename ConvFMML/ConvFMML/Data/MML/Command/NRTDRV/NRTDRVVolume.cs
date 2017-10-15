@@ -19,14 +19,16 @@ namespace ConvFMML.Data.MML.Command.NRTDRV
             if (volumeSettings.CommandNRTDRV == 0)
             {
                 sign = "v";
+                double temp;
                 if (module == SoundModule.FM)
                 {
-                    newValue = Value * (int)volumeSettings.VStep / 127;
+                    temp = Value * (double)volumeSettings.VStep / 127.0;
                 }
                 else
                 {
-                    newValue = Value * 15 / 127;
+                    temp = Value * 15.0 / 127.0;
                 }
+                newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
             }
             else
             {
@@ -37,7 +39,8 @@ namespace ConvFMML.Data.MML.Command.NRTDRV
                 }
                 else
                 {
-                    newValue = Value * 15 / 127;
+                    double temp = Value * 15.0 / 127.0;
+                    newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
                 }
             }
 

@@ -19,7 +19,8 @@ namespace ConvFMML.Data.MML.Command.MXDRV
             if (volumeSettings.CommandMXDRV == 0)
             {
                 sign = "v";
-                newValue = Value * 15 / 127;
+                double temp = Value * 15.0 / 127.0;
+                newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
             }
             else
             {
