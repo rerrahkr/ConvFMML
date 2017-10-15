@@ -12,7 +12,8 @@ namespace ConvFMML.Data.MML.Command.FMP
 
         protected override string GenerateString(Settings settings, SoundModule module)
         {
-            return "v" + (Value * 15 / 127);
+            double temp = Value * 15.0 / 127.0;
+            return "v" + (int)Math.Round(temp, MidpointRounding.AwayFromZero);
         }
     }
 }

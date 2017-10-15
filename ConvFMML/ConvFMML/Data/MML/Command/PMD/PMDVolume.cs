@@ -19,21 +19,24 @@ namespace ConvFMML.Data.MML.Command.PMD
             if (volumeSettings.CommandPMD == 0)
             {
                 sign = "v";
+                double temp;
                 if (module == SoundModule.SSG)
                 {
-                    newValue = Value * 15 / 127;
+                    temp = Value * 15.0 / 127.0;
                 }
                 else
                 {
-                    newValue = Value * 16 / 127;
+                    temp = Value * 16.0 / 127.0;
                 }
+                newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
             }
             else
             {
                 sign = "V";
                 if (module == SoundModule.SSG)
                 {
-                    newValue = Value * 15 / 127;
+                    double temp = Value * 15.0 / 127.0;
+                    newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
                 }
                 else
                 {

@@ -17,7 +17,8 @@ namespace ConvFMML.Data.MML.Command.Custom
 
             if (volumeSettings.RangeCustom != 0)
             {
-                newValue = Value * (int)volumeSettings.RangeCustom / 127;
+                double temp = Value * (double)volumeSettings.RangeCustom / 127.0;
+                newValue = (int)Math.Round(temp, MidpointRounding.AwayFromZero);
             }
             else
             {
