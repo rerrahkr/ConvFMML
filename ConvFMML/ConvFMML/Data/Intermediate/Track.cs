@@ -43,12 +43,29 @@ namespace ConvFMML.Data.Intermediate
             Name = name;
         }
 
-        public void ModifyPositionsByCountsPerWholenote(int curCountsPerWholeNote, int newCountsPerWholeNote)
+        public void ModifyPositionsByCountsPerWholenote(int curCountsPerWholeNote, int newCountsPerWholeNote, LinkedList<Event.TimeSignature> tsList)
         {
+            double ratio = (double)newCountsPerWholeNote / (double)curCountsPerWholeNote;
+
+            foreach (Event.Instrument inst in InstrumentList)
+            {
+                inst.Position = Position.ConvertByTimeDivisionRatio(inst.Position, ratio, tsList);
+            }
+
+            foreach (Event.Volume vol in VolumeList)
+            {
+                vol.Position = Position.ConvertByTimeDivisionRatio(vol.Position, ratio, tsList);
+            }
+
+            foreach (Event.Pan pan in PanList)
+            {
+                pan.Position = Position.ConvertByTimeDivisionRatio(pan.Position, ratio, tsList);
+            }
+
             var tempList = new List<Event.NoteRest>();
             foreach (Notes ns in NotesList)
             {
-                ns.ModifyPositionsByCountsPerWholenote(curCountsPerWholeNote, newCountsPerWholeNote);
+                ns.ModifyPositionsByCountsPerWholenote(curCountsPerWholeNote, newCountsPerWholeNote, tsList);
                 tempList.AddRange(ns.NoteList.ToList());
             }
             tempList = tempList.OrderBy(x => x.Start).ToList();
@@ -59,23 +76,6 @@ namespace ConvFMML.Data.Intermediate
                 ReorderNotes(newNotesList, addNote);
             }
             NotesList = newNotesList;
-
-            double ratio = (double)newCountsPerWholeNote / (double)curCountsPerWholeNote;
-
-            foreach (Event.Instrument inst in InstrumentList)
-            {
-                inst.Position = Position.ConvertByTimeDivisionRatio(inst.Position, ratio);
-            }
-
-            foreach (Event.Volume vol in VolumeList)
-            {
-                vol.Position = Position.ConvertByTimeDivisionRatio(vol.Position, ratio);
-            }
-
-            foreach (Event.Pan pan in PanList)
-            {
-                pan.Position = Position.ConvertByTimeDivisionRatio(pan.Position, ratio);
-            }
         }
 
         private void ReorderNotes(List<Notes> newNotesList, Event.NoteRest addNote)

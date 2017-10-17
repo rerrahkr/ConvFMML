@@ -17,15 +17,15 @@ namespace ConvFMML.Data.Intermediate
             NumberInTrack = numberInTrack;
         }
 
-        public void ModifyPositionsByCountsPerWholenote(int curCountsPerWholeNote, int newCountsPerWholeNote)
+        public void ModifyPositionsByCountsPerWholenote(int curCountsPerWholeNote, int newCountsPerWholeNote, LinkedList<Event.TimeSignature> tsList)
         {
             double ratio = (double)newCountsPerWholeNote / (double)curCountsPerWholeNote;
             var newList = new LinkedList<Event.NoteRest>();
 
             foreach (Event.NoteRest note in NoteList)
             {
-                note.Start = Position.ConvertByTimeDivisionRatio(note.Start, ratio);
-                note.End = Position.ConvertByTimeDivisionRatio(note.End, ratio);
+                note.Start = Position.ConvertByTimeDivisionRatio(note.Start, ratio, tsList);
+                note.End = Position.ConvertByTimeDivisionRatio(note.End, ratio, tsList);
 
                 if (note.Start.CompareTo(note.End) != 0)
                 {

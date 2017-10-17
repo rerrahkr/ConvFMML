@@ -52,10 +52,47 @@ namespace ConvFMML.Data.Intermediate
             }
         }
 
-        public static Position ConvertByTimeDivisionRatio(Position position, double ratio)
+        public static Position ConvertByTimeDivisionRatio(Position position, double ratio, LinkedList<Event.TimeSignature> tsList)
         {
-            var newTick = (uint)(position.Tick * ratio);
-            return new Position(position.Bar, newTick);
+            var newTick = (uint)Math.Round(position.Tick * ratio, MidpointRounding.AwayFromZero);
+            var pos = new Position(position.Bar, newTick);
+
+            if (tsList != null)
+            {
+                LinkedListNode<Event.TimeSignature> tsNode = tsList.First;
+                while (true)
+                {
+                    if (tsNode.Next == null)
+                    {
+                        if (pos.Tick == tsNode.Value.TickPerBar)
+                        {
+                            pos = new Position(pos.Bar + 1, 0);
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        if (tsNode.Next.Value.Position.CompareTo(pos) > 0)
+                        {
+                            if (pos.Tick == tsNode.Value.TickPerBar)
+                            {
+                                pos = new Position(pos.Bar + 1, 0);
+                            }
+                            if (tsNode.Next.Value.PrevSignedPosition.CompareTo(pos) == 0)
+                            {
+                                pos = tsNode.Next.Value.Position.Clone();
+                            }
+                            break;
+                        }
+                        else
+                        {
+                            tsNode = tsNode.Next;
+                        }
+                    }
+                }
+            }
+
+            return pos;
         }
 
         public static Position ConvertByTicksPerBar(Position position, uint prevTicksPerBar, uint ticksPerBar)
