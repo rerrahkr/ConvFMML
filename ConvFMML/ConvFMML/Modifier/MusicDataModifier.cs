@@ -51,7 +51,7 @@ namespace ConvFMML.Modifier
 
         public Intermediate Modify(Intermediate src, Settings settings, List<NotesStatus> statusList)
         {
-            Intermediate mod = ConstructPartFromTrack(src, settings.controlCommand, statusList);
+            Intermediate mod = ConstructPartFromTrack(src, settings, statusList);
 
             mod = InsertRests(mod);
 
@@ -89,10 +89,11 @@ namespace ConvFMML.Modifier
             return mod;
         }
 
-        private Intermediate ConstructPartFromTrack(Intermediate src, Settings.ControlCommand settings, List<NotesStatus> statusList)
+        private Intermediate ConstructPartFromTrack(Intermediate src, Settings settings, List<NotesStatus> statusList)
         {
             try
             {
+                Settings.ControlCommand comSettings = settings.controlCommand;
                 var newTrackList = new List<Track>();
 
                 foreach (NotesStatus ns in statusList)
@@ -109,7 +110,7 @@ namespace ConvFMML.Modifier
                         }
 
                         var newInstList = new LinkedList<Instrument>();
-                        if (settings.programChange.Enable)
+                        if (comSettings.programChange.Enable)
                         {
                             foreach (Instrument inst in track.InstrumentList)
                             {
@@ -118,7 +119,7 @@ namespace ConvFMML.Modifier
                         }
 
                         var newVolumeList = new LinkedList<Volume>();
-                        if (settings.volume.Enable)
+                        if (comSettings.volume.Enable)
                         {
                             foreach (Volume vol in track.VolumeList)
                             {
@@ -127,20 +128,15 @@ namespace ConvFMML.Modifier
                         }
 
                         var newPanList = new LinkedList<Pan>();
-                        if (settings.pan.Enable && ns.SoundModule == SoundModule.FM)
-                        {
-                            foreach (Pan pan in track.PanList)
-                            {
-                                newPanList.AddLast(pan.Clone());
-                            }
-                        }
+                        newPanList = ClonePanList(newPanList, track.PanList, settings, ns.SoundModule);
+
 
                         newTrackList.Add(new Track(newNotesList, newInstList, newVolumeList, newPanList, track.Number, track.Length, ns.Name));
                     }
                 }
 
                 LinkedList<Tempo> newTempoList;
-                if (settings.tempo.Enable)
+                if (comSettings.tempo.Enable)
                 {
                     newTempoList = src.TempoList;
                 }
@@ -155,6 +151,18 @@ namespace ConvFMML.Modifier
             {
                 throw new Exception("パートの再構築に失敗しました。", ex);
             }
+        }
+
+        protected virtual LinkedList<Pan> ClonePanList(LinkedList<Pan> newList, LinkedList<Pan> srcList, Settings settings, SoundModule module)
+        {
+            if (settings.controlCommand.pan.Enable && module == SoundModule.FM)
+            {
+                foreach (Pan pan in srcList)
+                {
+                    newList.AddLast(pan.Clone());
+                }
+            }
+            return newList;
         }
 
         private Intermediate InsertRests(Intermediate src)
