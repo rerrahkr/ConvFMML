@@ -200,34 +200,40 @@ namespace ConvFMML
                         str += " ClockCount=" + mml.CountsPerWholeNote + Environment.NewLine;
                         flag = true;
                     }
-                    if (settings.outputPart.PrintStyle == 2)
+                    if (settings.outputPart.PrintStyle != 0)
                     {
                         var lookUp = mml.PartList.ToLookup(x => x.SoundModule, x => x.Name);
                         if (lookUp[SoundModule.FM].Count() > 0)
                         {
-                            str += " PartOPNA=";
+                            string stemp = String.Empty;
                             foreach (string s in lookUp[SoundModule.FM])
                             {
                                 if (!String.IsNullOrEmpty(s))
                                 {
-                                    str += s.Substring(1);
+                                    stemp += s.Substring(1);
                                 }
                             }
-                            str += Environment.NewLine;
-                            flag = true;
+                            if (stemp.Count() > 0)
+                            {
+                                str = str + " PartOPNA=" + stemp + Environment.NewLine;
+                                flag = true;
+                            }
                         }
                         if (lookUp[SoundModule.SSG].Count() > 0)
                         {
-                            str += " PartSSG=";
+                            string stemp = String.Empty;
                             foreach (string s in lookUp[SoundModule.SSG])
                             {
                                 if (!String.IsNullOrEmpty(s))
                                 {
-                                    str += s.Substring(1);
+                                    stemp += s.Substring(1);
                                 }
                             }
-                            str += Environment.NewLine;
-                            flag = true;
+                            if (stemp.Count() > 0)
+                            {
+                                str = str + " PartSSG=" + stemp + Environment.NewLine;
+                                flag = true;
+                            }
                         }
                     }
                     if (flag)
@@ -282,15 +288,19 @@ namespace ConvFMML
                         str += "#Zenlen\t" + mml.CountsPerWholeNote + Environment.NewLine;
                         flag = true;
                     }
-                    if (settings.outputPart.PrintStyle == 2 && settings.outputPart.AutoNamePMD == 2)
+                    if (settings.outputPart.PrintStyle == 1 ||
+                        (settings.outputPart.PrintStyle == 2 && settings.outputPart.AutoNamePMD == 2))
                     {
                         var lookUp = mml.PartList.ToLookup(x => x.SoundModule, x => x.Name);
                         if (lookUp[SoundModule.FM3ch].Count() > 0)
                         {
-                            str += "#FM3Extend\t";
-                            lookUp[SoundModule.FM3ch].ToList().ForEach(x => str += x);
-                            str += Environment.NewLine;
-                            flag = true;
+                            string stemp = String.Empty;
+                            lookUp[SoundModule.FM3ch].ToList().ForEach(x => stemp += x);
+                            if (stemp.Count() > 0)
+                            {
+                                str = str + "#FM3Extend\t" + stemp + Environment.NewLine;
+                                flag = true;
+                            }
                         }
                     }
                     if (settings.noteRest.OctaveDirection == 1)
