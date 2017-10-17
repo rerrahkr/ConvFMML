@@ -65,28 +65,28 @@ namespace ConvFMML.Data.Intermediate
 
         private void ModifyPositionsByCountsPerWholenote(int curCountsPerWholeNote, int newCountsPerWholeNote)
         {
-            foreach (Track trk in TrackList)
-            {
-                trk.ModifyPositionsByCountsPerWholenote(curCountsPerWholeNote, newCountsPerWholeNote);
-            }
-
             double ratio = (double)newCountsPerWholeNote / (double)curCountsPerWholeNote;
 
             foreach (Event.TimeSignature ts in TimeSignatureList)
             {
-                ts.Position = Position.ConvertByTimeDivisionRatio(ts.Position, ratio);
-                ts.PrevSignedPosition = Position.ConvertByTimeDivisionRatio(ts.PrevSignedPosition, ratio);
-                ts.TickPerBar = (uint)((double)ts.TickPerBar * ratio);
+                ts.TickPerBar = (uint)(ts.TickPerBar * ratio);
+                ts.Position = Position.ConvertByTimeDivisionRatio(ts.Position, ratio, null);
+                ts.PrevSignedPosition = Position.ConvertByTimeDivisionRatio(ts.PrevSignedPosition, ratio, TimeSignatureList);
             }
 
             foreach (Event.KeySignature ks in KeySignatureList)
             {
-                ks.Position = Position.ConvertByTimeDivisionRatio(ks.Position, ratio);
+                ks.Position = Position.ConvertByTimeDivisionRatio(ks.Position, ratio, TimeSignatureList);
             }
 
             foreach (Event.Tempo tp in TempoList)
             {
-                tp.Position = Position.ConvertByTimeDivisionRatio(tp.Position, ratio);
+                tp.Position = Position.ConvertByTimeDivisionRatio(tp.Position, ratio, TimeSignatureList);
+            }
+
+            foreach (Track trk in TrackList)
+            {
+                trk.ModifyPositionsByCountsPerWholenote(curCountsPerWholeNote, newCountsPerWholeNote, TimeSignatureList);
             }
         }
 
