@@ -10,6 +10,18 @@ namespace ConvFMML.Modifier
 {
     public class FMPMusicDataModifier : MusicDataModifier
     {
+        protected override LinkedList<Pan> ClonePanList(LinkedList<Pan> newList, LinkedList<Pan> srcList, Settings settings, SoundModule module)
+        {
+            if (settings.mmlExpression.ExtensionFMP == 2)
+            {
+                return base.ClonePanList(newList, srcList, settings, module);
+            }
+            else
+            {
+                return newList;
+            }
+        }
+
         protected override ChangeEventSet CreateInstrumentSet(Instrument i)
         {
             return new ChangeEventSet(i, new FMPInstrument((i.Value + 1), MMLCommandRelation.Clear));
