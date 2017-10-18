@@ -51,7 +51,7 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                throw new Exception("ファイル '" + MIDIPath + "' は、データが壊れているため読み込めませんでした。" + ex.Message, ex);
+                throw new Exception("ファイル '" + MIDIPath + "' は、データが壊れているため読み込めませんでした。", ex);
             }
         }
 

@@ -41,9 +41,6 @@ namespace ConvFMML.Form
                 numericUpDown1.Maximum = settings.BorderRight - 65;
                 numericUpDown2.Minimum = settings.BorderLeft - 63;
                 numericUpDown2.Maximum = 63;
-                Console.WriteLine(settings.BorderLeft);
-                Console.WriteLine(settings.BorderLeft - 64);
-
                 numericUpDown1.Value = settings.BorderLeft - 64;
                 numericUpDown2.Value = settings.BorderRight - 64;
             }

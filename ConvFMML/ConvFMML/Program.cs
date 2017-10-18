@@ -22,7 +22,7 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"不明なエラーが発生しました。\nException Message: {ex.Message}", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("不明なエラーが発生しました。\nException Message: " + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
