@@ -47,8 +47,9 @@ namespace ConvFMML
                                 case 3: return ".mzi";
                                 default: return null;
                             }
-                        case MMLStyle.PMD:
                         case MMLStyle.MXDRV:
+                            return ".mus";
+                        case MMLStyle.PMD:
                         case MMLStyle.NRTDRV:
                             return ".mml";
                         default:
