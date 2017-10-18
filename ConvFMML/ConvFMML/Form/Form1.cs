@@ -219,8 +219,10 @@ namespace ConvFMML.Form
                             sfd.Filter = "MPI File (*.mpi)|*.mpi|MVI File (*.mvi)|*.mvi|MZI File (*.mzi)|*.mzi";
                             sfd.FilterIndex = settings.mmlExpression.ExtensionFMP;
                             break;
-                        case MMLStyle.PMD:
                         case MMLStyle.MXDRV:
+                            sfd.Filter = "MUS File (*.mus)|*.mus";
+                            break;
+                        case MMLStyle.PMD:
                         case MMLStyle.NRTDRV:
                             sfd.Filter = "MML File (*.mml)|*.mml";
                             break;
