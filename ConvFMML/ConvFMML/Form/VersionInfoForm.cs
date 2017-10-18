@@ -23,7 +23,7 @@ namespace ConvFMML.Form
 
             descriptionLabel.Text = Common.AssemblyDescription;
             titleLabel.Text = Common.AssemblyTitle;
-            versionLabel.Text = "Version " + Common.AssemblyFileVersion + "β";
+            versionLabel.Text = "Version " + Common.AssemblyFileVersion;
             copyrightLabel.Text = Common.AssemblyCopyright;
             iconPictureBox.Image = Common.Icon.ToBitmap();
         }

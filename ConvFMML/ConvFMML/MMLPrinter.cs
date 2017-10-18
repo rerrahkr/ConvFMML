@@ -178,7 +178,7 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                throw new Exception("MMLデータの '" + path + "' への出力に失敗しました。" + ex.StackTrace, ex);
+                throw new Exception("MMLデータの '" + path + "' への出力に失敗しました。", ex);
             }
         }
 

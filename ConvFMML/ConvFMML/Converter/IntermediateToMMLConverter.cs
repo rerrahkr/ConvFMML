@@ -50,7 +50,7 @@ namespace ConvFMML.Converter
             }
             catch (Exception ex)
             {
-                throw new Exception("MML形式のデータへの変換に失敗しました。" + ex.StackTrace, ex);
+                throw new Exception("MML形式のデータへの変換に失敗しました。", ex);
             }
         }
 

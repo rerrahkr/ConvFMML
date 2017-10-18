@@ -97,7 +97,7 @@ namespace ConvFMML.Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
