@@ -69,6 +69,29 @@ namespace ConvFMML.Form
             treeNode11});
 
             splitContainer4.Panel2.Controls.Add((BasePanel)treeNode1.Tag);
+
+            string[] fileNameArray = Environment.GetCommandLineArgs();
+            if (fileNameArray.Length == 2 && File.Exists(fileNameArray[1]))
+            {
+                string prevFileName = inputMIDITextBox.Text;
+                try
+                {
+                    splitContainer2.Enabled = false;
+                    LoadMIDI(fileNameArray[1]);    // Get 1 file only
+                    toolStripStatusLabel1.Text = "準備完了";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    inputMIDITextBox.Text = prevFileName;
+                    toolStripStatusLabel1.Text = "";
+                }
+                finally
+                {
+                    splitContainer2.Enabled = true;
+                    splitContainer2.Panel2.Enabled = (modTBMusic != null);
+                }
+            }
         }
 
         protected override void OnDragEnter(DragEventArgs drgevent)
@@ -89,19 +112,22 @@ namespace ConvFMML.Form
         {
             base.OnDragDrop(drgevent);
 
+            string prevFileName = inputMIDITextBox.Text;
             try
             {
                 splitContainer2.Enabled = false;
                 var fileNameArray = (string[])drgevent.Data.GetData(DataFormats.FileDrop, false);
                 LoadMIDI(fileNameArray[0]);    // Get 1 file only
+                toolStripStatusLabel1.Text = "準備完了";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                inputMIDITextBox.Text = prevFileName;
+                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : "準備完了";
             }
             finally
             {
-                toolStripStatusLabel1.Text = "準備完了";
                 splitContainer2.Enabled = true;
                 splitContainer2.Panel2.Enabled = (modTBMusic != null);
             }
@@ -129,6 +155,7 @@ namespace ConvFMML.Form
 
         private void InputMIDIButton_Click(object sender, EventArgs e)
         {
+            string prevFileName = inputMIDITextBox.Text;
             try
             {
                 using (var ofd = new OpenFileDialog())
@@ -145,10 +172,11 @@ namespace ConvFMML.Form
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                inputMIDITextBox.Text = prevFileName;
             }
             finally
             {
-                toolStripStatusLabel1.Text = "準備完了";
+                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : "準備完了";
                 splitContainer2.Enabled = true;
                 splitContainer2.Panel2.Enabled = (modTBMusic != null);
             }
