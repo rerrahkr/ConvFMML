@@ -103,10 +103,9 @@ namespace ConvFMML
         {
             var eventList = new LinkedList<Event>();
 
+            byte b, status = 0;
             for (int i = 0; i < bs.Length; i++)
             {
-                byte b, status = 0;
-
                 var deltaTime = new VariableLengthQuantity(bs, i);
                 i += deltaTime.BytesLength;
 
