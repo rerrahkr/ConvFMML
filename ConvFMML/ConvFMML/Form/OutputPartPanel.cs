@@ -120,7 +120,9 @@ namespace ConvFMML.Form
                         "FM: N1～N3   | SSG: N7～N9",
                         "FM: N1～N3   | FM3ch: N4～N6   | SSG: N7～N9",
                         "SSG: N7～N9",
-                        "FM: X1～X8"
+                        "FM: X1～X8",
+                        "SSG: A1～A3",
+                        "FM: L01～L09"
                     });
                     comboBox2.SelectedIndex = settings.AutoNameMml2vgm;
                     break;
