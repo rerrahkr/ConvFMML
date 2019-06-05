@@ -254,6 +254,9 @@ namespace ConvFMML.Form
                         case MMLStyle.NRTDRV:
                             sfd.Filter = "MML File (*.mml)|*.mml";
                             break;
+                        case MMLStyle.MUCOM88:
+                            sfd.Filter = "MUC File (*.muc)|*.muc";
+                            break;
                         default:
                             break;
                     }

@@ -52,6 +52,8 @@ namespace ConvFMML
                         case MMLStyle.PMD:
                         case MMLStyle.NRTDRV:
                             return ".mml";
+                        case MMLStyle.MUCOM88:
+                            return ".muc";
                         default:
                             return null;
                     }

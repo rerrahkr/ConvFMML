@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="Converter\IntermediateToMUCOM88MMLConverter.cs" />
     <Compile Include="Converter\IntermediateToMXDRVMMLConverter.cs" />
     <Compile Include="Converter\IntermediateToNRTDRVMMLConverter.cs" />
     <Compile Include="Converter\LengthContainer.cs" />
@@ -110,6 +111,12 @@
     <Compile Include="Data\MML\Command\FMP\FMPRest.cs" />
     <Compile Include="Data\MML\Command\FMP\FMPTempo.cs" />
     <Compile Include="Data\MML\Command\FMP\FMPVolume.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Instrument.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Note.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Pan.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Rest.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Tempo.cs" />
+    <Compile Include="Data\MML\Command\MUCOM88\MUCOM88Volume.cs" />
     <Compile Include="Data\MML\Command\MXDRV\MXDRVNote.cs" />
     <Compile Include="Data\MML\Command\MXDRV\MXDRVPan.cs" />
     <Compile Include="Data\MML\Command\MXDRV\MXDRVInstrument.cs" />
@@ -241,6 +248,7 @@
     <Compile Include="Modifier\CustomMusicDataModifier.cs" />
     <Compile Include="Modifier\FMP7MusicDataModifier.cs" />
     <Compile Include="Modifier\FMPMusicDataModifier.cs" />
+    <Compile Include="Modifier\MUCOM88MusicDataModifier.cs" />
     <Compile Include="Modifier\MusicDataModifier.cs" />
     <Compile Include="Modifier\MXDRVMusicDataModifier.cs" />
     <Compile Include="Modifier\NRTDRVMusicDataModifier.cs" />

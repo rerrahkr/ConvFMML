@@ -66,12 +66,13 @@ namespace ConvFMML
 
     public enum MMLStyle : int
     {
-        FMP7 = 0,
-        FMP = 1,
-        PMD = 2,
-        MXDRV = 3,
-        NRTDRV = 4,
-        Custom = 5
+        Custom = 0,
+        FMP7 = 1,
+        FMP = 2,
+        PMD = 3,
+        MXDRV = 4,
+        NRTDRV = 5,
+        MUCOM88 = 6
     }
 
     public enum Key : int

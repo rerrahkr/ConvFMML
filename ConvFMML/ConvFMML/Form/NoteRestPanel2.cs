@@ -44,11 +44,23 @@ namespace ConvFMML.Form
                 case MMLStyle.NRTDRV:
                     comboBox2.Items.AddRange(new string[] { "c4&c16表記", "c4^16表記" });
                     break;
+                case MMLStyle.MUCOM88:
+                    break;
                 default:
                     comboBox2.Items.AddRange(new string[] { "c4&c16表記", "c4&16表記" });
                     break;
             }
-            comboBox2.SelectedIndex = settings.TieStyle;
+            if (mmlStyle == MMLStyle.MUCOM88)
+            {
+                label5.Enabled = false;
+                comboBox2.Enabled = false;
+            }
+            else
+            {
+                label5.Enabled = true;
+                comboBox2.Enabled = true;
+                comboBox2.SelectedIndex = settings.TieStyle;
+            }
 
             if (mmlStyle == MMLStyle.Custom)
             {
@@ -78,7 +90,10 @@ namespace ConvFMML.Form
 
         private void UpdateCheckBox2()
         {
-            checkBox2.Enabled = (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 0);
+            checkBox2.Enabled = (
+                comboBox1.SelectedIndex == 1
+                && (!comboBox2.Enabled || comboBox2.SelectedIndex == 0)
+                );
         }
 
         private void UpdateComboBox1(ComboBox comboBox2)
@@ -86,7 +101,7 @@ namespace ConvFMML.Form
             comboBox1.Items.Clear();
 
             string[] items;
-            if (comboBox2.SelectedIndex == 0)
+            if (!comboBox2.Enabled || comboBox2.SelectedIndex == 0)
             {
                 items = new string[] { "分割しない(c4)", "分割する(c8&c8)" };
             }

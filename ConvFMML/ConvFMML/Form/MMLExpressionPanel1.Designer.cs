@@ -81,12 +81,13 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "カスタム",
             "FMP7",
             "FMP",
             "PMD",
             "MXDRV",
             "NRTDRV",
-            "カスタム"});
+            "MUCOM88"});
             this.comboBox1.Location = new System.Drawing.Point(180, 6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(311, 20);
@@ -246,11 +247,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // MMLExpressionPanel
+            // MMLExpressionPanel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "MMLExpressionPanel";
+            this.Name = "MMLExpressionPanel1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

@@ -45,7 +45,7 @@ namespace ConvFMML.Form
 
             if (comboBox1.SelectedIndex == 2)
             {
-                if (this.mmlStyle == MMLStyle.MXDRV)
+                if (this.mmlStyle == MMLStyle.MXDRV || this.mmlStyle == MMLStyle.MUCOM88)
                 {
                     label2.Enabled = false;
                     comboBox2.Enabled = false;
@@ -153,7 +153,7 @@ namespace ConvFMML.Form
             }
             else
             {
-                if (mmlStyle == MMLStyle.MXDRV)
+                if (mmlStyle == MMLStyle.MXDRV || mmlStyle == MMLStyle.MUCOM88)
                 {
                     label2.Enabled = false;
                     comboBox2.Enabled = false;
