@@ -844,6 +844,34 @@ namespace ConvFMML.Form
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
+                            case 15:
+                                if (n < 3)
+                                {
+                                    name = "\'A" + (n + 1);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 16:
+                                if (n < 9)
+                                {
+                                    name = $"\'L{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
                             default:
                                 name = String.Empty;
                                 module = SoundModule.Others;
