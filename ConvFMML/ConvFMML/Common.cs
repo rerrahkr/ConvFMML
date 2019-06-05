@@ -72,7 +72,8 @@ namespace ConvFMML
         PMD = 3,
         MXDRV = 4,
         NRTDRV = 5,
-        MUCOM88 = 6
+        MUCOM88 = 6,
+        Mml2vgm = 7
     }
 
     public enum Key : int

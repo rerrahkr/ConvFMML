@@ -103,6 +103,27 @@ namespace ConvFMML.Form
                     });
                     comboBox2.SelectedIndex = settings.AutoNameNRTDRV;
                     break;
+                case MMLStyle.Mml2vgm:
+                    comboBox2.Items.AddRange(new string[]
+                    {
+                        "FM: F1～F6   | SSG: S1～S4",
+                        "FM: F1～F6   | FM3ch: F7～F9   | SSG: S1～S4",
+                        "FM: E01～E06 | SSG: S1～S4",
+                        "FM: E01～E06 | FM3ch: E07～E09 | SSG: S1～S4",
+                        "SSG: S1～S4",
+                        "FM: T01～T06 | SSG: T10～T12",
+                        "FM: T01～T06 | FM3ch: T07～T09 | SSG: T10～T12",
+                        "SSG: T10～T12",
+                        "FM: P01～P06 | SSG: P10～P12",
+                        "FM: P01～T06 | FM3ch: P07～P09 | SSG: P10～P12",
+                        "SSG: P10～P12",
+                        "FM: N1～N3   | SSG: N7～N9",
+                        "FM: N1～N3   | FM3ch: N4～N6   | SSG: N7～N9",
+                        "SSG: N7～N9",
+                        "FM: X1～X8"
+                    });
+                    comboBox2.SelectedIndex = settings.AutoNameMml2vgm;
+                    break;
                 default:
                     break;
             }
@@ -184,6 +205,9 @@ namespace ConvFMML.Form
                     break;
                 case MMLStyle.NRTDRV:
                     settings.AutoNameNRTDRV = cb.SelectedIndex;
+                    break;
+                case MMLStyle.Mml2vgm:
+                    settings.AutoNameMml2vgm = cb.SelectedIndex;
                     break;
                 default:
                     break;

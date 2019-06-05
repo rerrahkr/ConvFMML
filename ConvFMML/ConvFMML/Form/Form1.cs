@@ -257,6 +257,9 @@ namespace ConvFMML.Form
                         case MMLStyle.MUCOM88:
                             sfd.Filter = "MUC File (*.muc)|*.muc";
                             break;
+                        case MMLStyle.Mml2vgm:
+                            sfd.Filter = "GWI File (*.gwi)|*.gwi";
+                            break;
                         default:
                             break;
                     }

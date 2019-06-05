@@ -35,6 +35,9 @@ namespace ConvFMML.Converter
                 case MMLStyle.MUCOM88:
                     instance = new IntermediateToMUCOM88MMLConverter();
                     break;
+                case MMLStyle.Mml2vgm:
+                    instance = new IntermediateToMml2vgmMMLConverter();
+                    break;
                 default:
                     instance = null;
                     break;

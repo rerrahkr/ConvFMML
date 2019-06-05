@@ -7,7 +7,7 @@ ConvFMMLはスタンダードMIDIファイル(SMF/MIDI)をミュージックマ�
 以下のような処理が可能です。  
 
 * MIDIデータから自動で音符・休符を生成(和音対応)
-* MMLデータをFMP7、FMP、PMD、MXDRV、NRTDRV、MUCOM88、カスタムのうち指定されたMML書式で出力
+* MMLデータをFMP7、FMP、PMD、MXDRV、NRTDRV、MUCOM88、mml2vgm、カスタムのうち指定されたMML書式で出力
 * 小節ごとに音符・休符を改行・ブロック分け
 * MIDIデータの音量、パンのコントロールチェンジ(CC)、プログラムチェンジ(PC)、テンポをMML出力
 * 出力するMIDIトラックの指定・MMLパート名指定

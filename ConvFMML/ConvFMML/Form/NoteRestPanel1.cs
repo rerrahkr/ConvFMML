@@ -60,6 +60,7 @@ namespace ConvFMML.Form
                 case MMLStyle.MXDRV:
                 case MMLStyle.NRTDRV:
                 case MMLStyle.PMD:
+                case MMLStyle.Mml2vgm:
                 case MMLStyle.Custom:
                     label3.Enabled = true;
                     comboBox2.Enabled = true;
