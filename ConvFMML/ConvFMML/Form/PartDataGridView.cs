@@ -125,6 +125,12 @@ namespace ConvFMML.Form
                             new { Display = "SSG", Value = SoundModule.SSG }
                         });
                             break;
+                        case MMLStyle.MUCOM88:
+                            cbc.Items.AddRange(new[] {
+                            new { Display = "FM", Value = SoundModule.FM },
+                            new { Display = "SSG", Value = SoundModule.SSG }
+                        });
+                            break;
                         default:
                             cbc.Items.AddRange(new[] {
                             new { Display = "FM", Value = SoundModule.FM },
@@ -497,6 +503,33 @@ namespace ConvFMML.Form
                                 module = SoundModule.FM;
                                 backColor = Color.LavenderBlush;
                                 break;
+                        }
+                        break;
+
+                    case MMLStyle.MUCOM88:
+                        if (n < 3)
+                        {
+                            name = Convert.ToChar(0x41 + n).ToString();
+                            module = SoundModule.FM;
+                            backColor = Color.White;
+                        }
+                        else if (n < 6)
+                        {
+                            name = Convert.ToChar(0x41 + n).ToString();
+                            module = SoundModule.SSG;
+                            backColor = Color.White;
+                        }
+                        else if (n < 9)
+                        {
+                            name = Convert.ToChar(0x42 + n).ToString();
+                            module = SoundModule.FM;
+                            backColor = Color.White;
+                        }
+                        else
+                        {
+                            name = String.Empty;
+                            module = SoundModule.FM;
+                            backColor = Color.LavenderBlush;
                         }
                         break;
 

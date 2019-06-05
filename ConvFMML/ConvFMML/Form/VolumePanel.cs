@@ -55,9 +55,8 @@ namespace ConvFMML.Form
                 switch (this.mmlStyle)
                 {
                     case MMLStyle.FMP7:
-                        panel2.Enabled = false;
-                        break;
                     case MMLStyle.FMP:
+                    case MMLStyle.MUCOM88:
                         panel2.Enabled = false;
                         break;
                     case MMLStyle.PMD:
@@ -93,6 +92,7 @@ namespace ConvFMML.Form
             {
                 case MMLStyle.FMP7:
                 case MMLStyle.FMP:
+                case MMLStyle.MUCOM88:
                     break;
                 case MMLStyle.PMD:
                 case MMLStyle.MXDRV:

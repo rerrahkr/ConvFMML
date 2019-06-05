@@ -45,9 +45,11 @@ namespace ConvFMML
                                     }
                                     needPartName = false;
 
-                                    if (i == 0 && mml.PartList.IndexOf(part) == 0 &&
-                                        ((mml.Style == MMLStyle.FMP && settings.mmlExpression.PrintTimeBase == 1) ||
-                                        (mml.Style == MMLStyle.PMD && (settings.mmlExpression.PrintTimeBasePMD == 2))))
+                                    if (i == 0 &&
+                                        ((mml.PartList.IndexOf(part) == 0 &&
+                                        (mml.Style == MMLStyle.FMP && settings.mmlExpression.PrintTimeBase == 1) ||
+                                        (mml.Style == MMLStyle.PMD && settings.mmlExpression.PrintTimeBasePMD == 2))
+                                        || (mml.Style == MMLStyle.MUCOM88 && settings.mmlExpression.PrintTimeBase == 1)))
                                     {
                                         str += "C" + mml.CountsPerWholeNote + " ";
                                     }
@@ -306,6 +308,13 @@ namespace ConvFMML
                     if (settings.noteRest.OctaveDirection == 1)
                     {
                         str += "#Octave\tReverse" + Environment.NewLine;
+                        flag = true;
+                    }
+                    break;
+                case MMLStyle.MUCOM88:
+                    if (settings.mmlExpression.TitleEnable == 1 && mml.Title.Length > 0)
+                    {
+                        str += "#title\t" + mml.Title + Environment.NewLine;
                         flag = true;
                     }
                     break;

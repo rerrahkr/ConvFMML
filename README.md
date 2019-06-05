@@ -1,13 +1,13 @@
 # ConvFMML
 MIDI→MML Converter  
-Copyright (C) 2017, 2018 Rerrah
+Copyright (C) 2017-2019 Rerrah
 
 ## 概要
 ConvFMMLはスタンダードMIDIファイル(SMF/MIDI)をミュージックマクロランゲージ(MML)形式に変換するソフトです。  
 以下のような処理が可能です。  
 
 * MIDIデータから自動で音符・休符を生成(和音対応)
-* MMLデータをFMP7、FMP、PMD、MXDRV、NRTDRV、カスタムのうち指定されたMML書式で出力
+* MMLデータをFMP7、FMP、PMD、MXDRV、NRTDRV、MUCOM88、カスタムのうち指定されたMML書式で出力
 * 小節ごとに音符・休符を改行・ブロック分け
 * MIDIデータの音量、パンのコントロールチェンジ(CC)、プログラムチェンジ(PC)、テンポをMML出力
 * 出力するMIDIトラックの指定・MMLパート名指定
