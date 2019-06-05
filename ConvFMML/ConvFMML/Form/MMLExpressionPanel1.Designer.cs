@@ -87,7 +87,8 @@
             "PMD",
             "MXDRV",
             "NRTDRV",
-            "MUCOM88"});
+            "MUCOM88",
+            "mml2vgm"});
             this.comboBox1.Location = new System.Drawing.Point(180, 6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(311, 20);

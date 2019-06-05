@@ -131,6 +131,14 @@ namespace ConvFMML.Form
                             new { Display = "SSG", Value = SoundModule.SSG }
                         });
                             break;
+                        case MMLStyle.Mml2vgm:
+                            cbc.Items.AddRange(new[] {
+                            new { Display = "FM", Value = SoundModule.FM },
+                            new { Display = "SSG", Value = SoundModule.SSG },
+                            new { Display = "FM3ch", Value = SoundModule.FM3ch },
+                            new { Display = "Others", Value = SoundModule.Others }
+                        });
+                            break;
                         default:
                             cbc.Items.AddRange(new[] {
                             new { Display = "FM", Value = SoundModule.FM },
@@ -530,6 +538,317 @@ namespace ConvFMML.Form
                             name = String.Empty;
                             module = SoundModule.FM;
                             backColor = Color.LavenderBlush;
+                        }
+                        break;
+
+                    case MMLStyle.Mml2vgm:
+                        switch (Settings.AutoNameMml2vgm)
+                        {
+                            case 0:
+                                if (n < 6)
+                                {
+                                    name = "\'F" + (n + 1);
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 10)
+                                {
+                                    name = "\'S" + (n - 5);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 1:
+                                if (n < 6)
+                                {
+                                    name = "\'F" + (n + 1);
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = "\'F" + (n + 1);
+                                    module = SoundModule.FM3ch;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 13)
+                                {
+                                    name = "\'S" + (n - 8);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 2:
+                                if (n < 6)
+                                {
+                                    name = $"\'E{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 10)
+                                {
+                                    name = "\'S" + (n - 5);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 3:
+                                if (n < 6)
+                                {
+                                    name = $"\'E{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = $"\'E{n + 1:D2}";
+                                    module = SoundModule.FM3ch;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 13)
+                                {
+                                    name = "\'S" + (n - 8);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 4:
+                                if (n < 4)
+                                {
+                                    name = "\'S" + (n + 1);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 5:
+                                if (n < 6)
+                                {
+                                    name = $"\'T{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = $"\'T{n + 4:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 6:
+                                if (n < 6)
+                                {
+                                    name = $"\'T{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = $"\'T{n + 1:D2}";
+                                    module = SoundModule.FM3ch;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 12)
+                                {
+                                    name = $"\'T{n + 1:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 7:
+                                if (n < 3)
+                                {
+                                    name = $"\'T{n + 10:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 8:
+                                if (n < 6)
+                                {
+                                    name = $"\'P{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = $"\'P{n + 4:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 9:
+                                if (n < 6)
+                                {
+                                    name = $"\'P{n + 1:D2}";
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = $"\'P{n + 1:D2}";
+                                    module = SoundModule.FM3ch;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 12)
+                                {
+                                    name = $"\'P{n + 1:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 10:
+                                if (n < 3)
+                                {
+                                    name = $"\'P{n + 10:D2}";
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 11:
+                                if (n < 3)
+                                {
+                                    name = "\'N" + (n + 1);
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 6)
+                                {
+                                    name = "\'N" + (n + 4);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 12:
+                                if (n < 3)
+                                {
+                                    name = "\'N" + (n + 1);
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 6)
+                                {
+                                    name = "\'N" + (n + 1);
+                                    module = SoundModule.FM3ch;
+                                    backColor = Color.White;
+                                }
+                                else if (n < 9)
+                                {
+                                    name = "\'N" + (n + 1);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 13:
+                                if (n < 3)
+                                {
+                                    name = "\'N" + (n + 7);
+                                    module = SoundModule.SSG;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            case 14:
+                                if (n < 8)
+                                {
+                                    name = "\'X" + (n + 1);
+                                    module = SoundModule.FM;
+                                    backColor = Color.White;
+                                }
+                                else
+                                {
+                                    name = String.Empty;
+                                    module = SoundModule.Others;
+                                    backColor = Color.LavenderBlush;
+                                }
+                                break;
+                            default:
+                                name = String.Empty;
+                                module = SoundModule.Others;
+                                backColor = Color.LavenderBlush;
+                                break;
                         }
                         break;
 

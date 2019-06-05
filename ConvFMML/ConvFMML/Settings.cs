@@ -54,6 +54,8 @@ namespace ConvFMML
                             return ".mml";
                         case MMLStyle.MUCOM88:
                             return ".muc";
+                        case MMLStyle.Mml2vgm:
+                            return ".gwi";
                         default:
                             return null;
                     }
@@ -145,6 +147,7 @@ namespace ConvFMML
             public int AutoNameFMP { set; get; } = 0;
             public int AutoNamePMD { set; get; } = 2;
             public int AutoNameNRTDRV { set; get; } = 1;
+            public int AutoNameMml2vgm { set; get; } = 0;
             public bool RemoveEmptyParts { set; get; } = true;
         }
 

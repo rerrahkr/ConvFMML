@@ -99,6 +99,7 @@ namespace ConvFMML
                                                             case MMLStyle.MXDRV:
                                                             case MMLStyle.NRTDRV:
                                                             case MMLStyle.PMD:
+                                                            case MMLStyle.Mml2vgm:
                                                                 str += ((settings.noteRest.OctaveDirection == 0) ? ">" : "<");
                                                                 break;
                                                             default:
@@ -117,6 +118,7 @@ namespace ConvFMML
                                                             case MMLStyle.MXDRV:
                                                             case MMLStyle.NRTDRV:
                                                             case MMLStyle.PMD:
+                                                            case MMLStyle.Mml2vgm:
                                                                 str += ((settings.noteRest.OctaveDirection == 0) ? "<" : ">");
                                                                 break;
                                                             default:
@@ -315,6 +317,18 @@ namespace ConvFMML
                     if (settings.mmlExpression.TitleEnable == 1 && mml.Title.Length > 0)
                     {
                         str += "#title\t" + mml.Title + Environment.NewLine;
+                        flag = true;
+                    }
+                    break;
+                case MMLStyle.Mml2vgm:
+                    if (settings.mmlExpression.TitleEnable == 1 && mml.Title.Length > 0)
+                    {
+                        str += " TitleName=" + mml.Title + Environment.NewLine;
+                        flag = true;
+                    }
+                    if (settings.mmlExpression.PrintTimeBase == 1)
+                    {
+                        str += " ClockCount=" + mml.CountsPerWholeNote + Environment.NewLine;
                         flag = true;
                     }
                     break;

@@ -44,6 +44,9 @@ namespace ConvFMML.Modifier
                 case MMLStyle.MUCOM88:
                     instance = new MUCOM88MusicDataModifier();
                     break;
+                case MMLStyle.Mml2vgm:
+                    instance = new Mml2vgmMusicDataModifier();
+                    break;
                 default:
                     instance = null;
                     break;
