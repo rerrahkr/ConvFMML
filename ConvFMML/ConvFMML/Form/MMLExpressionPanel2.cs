@@ -27,6 +27,7 @@ namespace ConvFMML.Form
 
             comboBox1.SelectedIndex = settings.TitleEnable;
             UpdatePanel2(settings.MMLStyle);
+            checkBox1.Checked = settings.UseTabAfterPartName;
         }
 
         public override void UpdateSelections(MMLStyle mmlStyle)
@@ -52,6 +53,12 @@ namespace ConvFMML.Form
         {
             var cb = (ComboBox)sender;
             settings.TitleEnable = cb.SelectedIndex;
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            var cb = (CheckBox)sender;
+            settings.UseTabAfterPartName = cb.Checked;
         }
     }
 }
