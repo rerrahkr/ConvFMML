@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -42,12 +43,12 @@ namespace ConvFMML.Form
             {
                 case MMLStyle.MXDRV:
                 case MMLStyle.NRTDRV:
-                    comboBox2.Items.AddRange(new string[] { "c4&c16表記", "c4^16表記" });
+                    comboBox2.Items.AddRange(new string[] { Resources.TieLengthStyleC4AndC16, Resources.TieLengthStyleC4Hat16 });
                     break;
                 case MMLStyle.MUCOM88:
                     break;
                 default:
-                    comboBox2.Items.AddRange(new string[] { "c4&c16表記", "c4&16表記" });
+                    comboBox2.Items.AddRange(new string[] { Resources.TieLengthStyleC4AndC16, Resources.TieLengthStyleC4And16 });
                     break;
             }
             if (mmlStyle == MMLStyle.MUCOM88)
@@ -104,7 +105,7 @@ namespace ConvFMML.Form
             string[] items;
             if (!comboBox2.Enabled || comboBox2.SelectedIndex == 0)
             {
-                items = new string[] { "分割しない(c4)", "分割する(c8&c8)" };
+                items = new string[] { Resources.OverMeasureC4, Resources.OverMeasureC8AndC8 };
             }
             else
             {
@@ -112,10 +113,10 @@ namespace ConvFMML.Form
                 {
                     case MMLStyle.MXDRV:
                     case MMLStyle.NRTDRV:
-                        items = new string[] { "分割しない(c4)", "分割する(c8^8)" };
+                        items = new string[] { Resources.OverMeasureC4, Resources.OverMeasureC8Hat8 };
                         break;
                     default:
-                        items = new string[] { "分割しない(c4)", "分割する(c8&8)" };
+                        items = new string[] { Resources.OverMeasureC4, Resources.OverMeasureC8And8 };
                         break;
                 }
             }

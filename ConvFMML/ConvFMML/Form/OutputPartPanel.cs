@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConvFMML.Data.Intermediate;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -34,12 +35,12 @@ namespace ConvFMML.Form
             comboBox1.Items.Clear();
             if (this.mmlStyle == MMLStyle.Custom)
             {
-                comboBox1.Items.AddRange(new string[] { "出力しない", "それぞれ指定して出力" });
+                comboBox1.Items.AddRange(new string[] { Resources.PartDisabled, Resources.PartCustom });
                 comboBox1.SelectedIndex = settings.PrintStyleCustom;
             }
             else
             {
-                comboBox1.Items.AddRange(new string[] { "出力しない", "それぞれ指定して出力", "自動で割り当てて出力" });
+                comboBox1.Items.AddRange(new string[] { Resources.PartDisabled, Resources.PartCustom, Resources.PartAuto });
                 comboBox1.SelectedIndex = settings.PrintStyle;
             }
 

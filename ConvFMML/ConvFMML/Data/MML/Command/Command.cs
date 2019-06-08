@@ -22,7 +22,7 @@ namespace ConvFMML.Data.MML.Command
 
         protected virtual string GenerateString(Settings settings, SoundModule module)
         {
-            return String.Empty;
+            return string.Empty;
         }
     }
 }

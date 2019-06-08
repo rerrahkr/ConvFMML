@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConvFMML.Data.Intermediate;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -49,12 +50,12 @@ namespace ConvFMML.Form
             comboBox2.Items.Clear();
             if (settings.MMLStyle == MMLStyle.PMD)
             {
-                comboBox2.Items.AddRange(new string[] { "無効", "#Zenlenコマンドで出力", "Cコマンドで出力" });
+                comboBox2.Items.AddRange(new string[] { Resources.Disabled, Resources.TimeBasePMDZenlen, Resources.TimeBasePMDC });
                 comboBox2.SelectedIndex = settings.PrintTimeBasePMD;
             }
             else
             {
-                comboBox2.Items.AddRange(new string[] { "無効", "有効" });
+                comboBox2.Items.AddRange(new string[] { Resources.Disabled, Resources.Enabled });
                 comboBox2.SelectedIndex = settings.PrintTimeBase;
             }
         }

@@ -52,11 +52,11 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Image = ((System.Drawing.Image)(resources.GetObject("titleLabel.Image")));
-            this.titleLabel.Text = "MML表現(1)";
+            resources.ApplyResources(this.titleLabel, "titleLabel");
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
@@ -68,55 +68,42 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(4, 4);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label1.Size = new System.Drawing.Size(170, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "MML書式設定 :";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBox1
             // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "カスタム",
-            "FMP7",
-            "FMP",
-            "PMD",
-            "MXDRV",
-            "NRTDRV",
-            "MUCOM88",
-            "mml2vgm"});
-            this.comboBox1.Location = new System.Drawing.Point(180, 6);
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3"),
+            resources.GetString("comboBox1.Items4"),
+            resources.GetString("comboBox1.Items5"),
+            resources.GetString("comboBox1.Items6"),
+            resources.GetString("comboBox1.Items7")});
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 20);
-            this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(4, 59);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label3.Size = new System.Drawing.Size(170, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "MML分解能の出力 :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBox2
             // 
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(180, 61);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(311, 20);
-            this.comboBox2.TabIndex = 5;
             this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.label5);
@@ -125,28 +112,18 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(3, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(494, 114);
-            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ブロック区切り";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(319, 43);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 12);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "※0で改行しない";
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(177, 41);
+            resources.ApplyResources(this.numericUpDown2, "numericUpDown2");
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 19);
-            this.numericUpDown2.TabIndex = 24;
             this.numericUpDown2.Value = new decimal(new int[] {
             2,
             0,
@@ -155,102 +132,69 @@
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(1, 38);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label5.Size = new System.Drawing.Size(170, 23);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "自動改行する小節数 :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(175, 89);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(230, 12);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "※自動改行する小節のカウントをリセットします。";
             // 
             // comboBox4
             // 
+            resources.ApplyResources(this.comboBox4, "comboBox4");
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "無効",
-            "有効"});
-            this.comboBox4.Location = new System.Drawing.Point(177, 66);
+            resources.GetString("comboBox4.Items"),
+            resources.GetString("comboBox4.Items1")});
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(311, 20);
-            this.comboBox4.TabIndex = 20;
             this.comboBox4.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectionChangeCommitted);
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(1, 64);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label7.Size = new System.Drawing.Size(170, 23);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "拍子変更による改行 :";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBox3
             // 
+            resources.ApplyResources(this.comboBox3, "comboBox3");
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "区切りなし",
-            "space挿入",
-            "tab挿入"});
-            this.comboBox3.Location = new System.Drawing.Point(177, 17);
+            resources.GetString("comboBox3.Items"),
+            resources.GetString("comboBox3.Items1"),
+            resources.GetString("comboBox3.Items2")});
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(311, 20);
-            this.comboBox3.TabIndex = 15;
             this.comboBox3.SelectionChangeCommitted += new System.EventHandler(this.comboBox3_SelectionChangeCommitted);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(1, 15);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label4.Size = new System.Drawing.Size(170, 23);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "小節ごとの区切り挿入 :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(4, 32);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label2.Size = new System.Drawing.Size(170, 23);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "MML分解能設定 :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 34);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(120, 19);
-            this.textBox1.TabIndex = 8;
             this.textBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(306, 32);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "設定";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MMLExpressionPanel1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "MMLExpressionPanel1";
             this.panel1.ResumeLayout(false);

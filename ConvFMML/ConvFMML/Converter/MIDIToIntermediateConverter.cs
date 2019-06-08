@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Converter
 {
@@ -34,7 +35,7 @@ namespace ConvFMML.Converter
             }
             catch (Exception ex)
             {
-                throw new Exception("分解能の変換に失敗しました。", ex);
+                throw new Exception(Resources.ErrorConverterFailedToIntermediate, ex);
             }
         }
 
@@ -51,7 +52,7 @@ namespace ConvFMML.Converter
             ksl.AddFirst(new Data.Intermediate.Event.KeySignature(pos.Clone(), Key.CMaj));      // Set default key signature
             var tl = new LinkedList<Data.Intermediate.Event.Tempo>();
             tl.AddFirst(new Data.Intermediate.Event.Tempo(pos.Clone(), 120));       // Set default tempo
-            string title = String.Empty;
+            string title = string.Empty;
             var length = new Data.Intermediate.Position(1, 0);
 
             foreach (Data.MIDI.Event.Event ev in events)
@@ -148,7 +149,7 @@ namespace ConvFMML.Converter
             var il = new LinkedList<Data.Intermediate.Event.Instrument>();
             var vl = new LinkedList<Data.Intermediate.Event.Volume>();
             var pl = new LinkedList<Data.Intermediate.Event.Pan>();
-            string name = String.Empty;
+            string name = string.Empty;
             var length = new Data.Intermediate.Position(1, 0);
 
             foreach (Data.MIDI.Event.Event ev in midiTrack.EventList)

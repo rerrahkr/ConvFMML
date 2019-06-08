@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConvFMML.Data.MIDI;
 using ConvFMML.Data.MIDI.Event;
+using ConvFMML.Properties;
 
 namespace ConvFMML
 {
@@ -51,7 +52,7 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                throw new Exception("ファイル '" + MIDIPath + "' は、データが壊れているため読み込めませんでした。", ex);
+                throw new Exception(string.Format(Resources.ErrorMIDIBroken, MIDIPath), ex);
             }
         }
 
@@ -68,13 +69,13 @@ namespace ConvFMML
             }
             catch (Exception ex) when (!(ex is System.IO.FileNotFoundException))
             {
-                throw new Exception("ファイル '" + MIDIPath + "' の読み込みに失敗しました。", ex);
+                throw new Exception(string.Format(Resources.ErrorMIDIReadFailed, MIDIPath), ex);
             }
         }
 
         private void ReadHeaderChunk(byte[] bs, DataSet set)
         {
-            if (Encoding.ASCII.GetString(bs.Take(4).ToArray()) != "MThd") throw new Exception("Couldn't read 'MThd'");
+            if (Encoding.ASCII.GetString(bs.Take(4).ToArray()) != "MThd") throw new Exception("Internal: Couldn't read 'MThd'");
 
             set.Format = LittleEndianConverter.ToUInt16(bs, 8);
             set.TrackSize = LittleEndianConverter.ToUInt16(bs, 10);
@@ -88,7 +89,7 @@ namespace ConvFMML
             uint cur = 14;   // First track chunk byte
             for (int i = 0; i < set.TrackSize; i++)
             {
-                if (Encoding.ASCII.GetString(bs.Skip((int)cur).Take(4).ToArray()) != "MTrk") throw new Exception("Couldn't read 'MTrk'");
+                if (Encoding.ASCII.GetString(bs.Skip((int)cur).Take(4).ToArray()) != "MTrk") throw new Exception("Internal: Couldn't read 'MTrk'");
                 cur += 4;
 
                 uint dataLength = LittleEndianConverter.ToUInt32(bs, (int)cur);
@@ -207,7 +208,7 @@ namespace ConvFMML
                                             string text;
                                             if (vlq.Value == 0)
                                             {
-                                                text = String.Empty;
+                                                text = string.Empty;
                                             }
                                             else
                                             {
@@ -318,17 +319,17 @@ namespace ConvFMML
                                         }
 
                                     default:
-                                        throw new Exception("Unknown Meta Event");
+                                        throw new Exception("Internal: Unknown Meta Event");
                                 }
                                 break;
 
                             default:
-                                throw new Exception("Unknown 0xfx Event");
+                                throw new Exception("Internal: Unknown 0xfx Event");
                         }
                         break;
 
                     default:
-                        throw new Exception("Unknown Event");
+                        throw new Exception("Internal: Unknown Event");
                 }
             }   // for
 
@@ -467,8 +468,7 @@ namespace ConvFMML
                                 }
                                 else
                                 {
-                                    var me = (MIDIEvent)midiEv;
-                                    modEv = new MIDIEvent(deltaTime, me.Channel);
+                                    modEv = new MIDIEvent(deltaTime, midiEv.Channel);
                                 }
                                 eventlist.AddLast(modEv);
 
@@ -489,7 +489,7 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                throw new Exception("MIDIデータのフォーマット1への変換に失敗しました。", ex);
+                throw new Exception(Resources.ErrorMIDIFormat1, ex);
             }
         }
     }

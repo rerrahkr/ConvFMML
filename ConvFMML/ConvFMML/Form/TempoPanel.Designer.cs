@@ -41,67 +41,50 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Image = ((System.Drawing.Image)(resources.GetObject("titleLabel.Image")));
-            this.titleLabel.Text = "各種コマンド / テンポ";
+            resources.ApplyResources(this.titleLabel, "titleLabel");
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.checkBox1);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(162, 3);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 19);
-            this.textBox1.TabIndex = 18;
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(3, 1);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label2.Size = new System.Drawing.Size(153, 23);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "テンポコマンド指定 :";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
+            resources.ApplyResources(this.checkBox1, "checkBox1");
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(139, 16);
-            this.checkBox1.TabIndex = 19;
-            this.checkBox1.Text = "テンポコマンドを書き出す";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(485, 32);
-            this.panel3.TabIndex = 21;
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(15, 22);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(485, 185);
-            this.panel2.TabIndex = 20;
             // 
             // TempoPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "TempoPanel";
             this.panel1.ResumeLayout(false);

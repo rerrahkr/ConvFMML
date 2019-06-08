@@ -264,11 +264,22 @@
     <Compile Include="Modifier\TempoSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.ja.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ja.resx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Tables.cs" />
     <Compile Include="VariableLengthQuantity.cs" />
+    <EmbeddedResource Include="Form\ControlCommandGenericPanel.ja.resx">
+      <DependentUpon>ControlCommandGenericPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\ControlCommandGenericPanel.resx">
       <DependentUpon>ControlCommandGenericPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form1.ja.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -276,29 +287,59 @@
     <EmbeddedResource Include="Form\BasePanel.resx">
       <DependentUpon>BasePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\MMLExpressionPanel1.ja.resx">
+      <DependentUpon>MMLExpressionPanel1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\MMLExpressionPanel1.resx">
       <DependentUpon>MMLExpressionPanel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\MMLExpressionPanel2.ja.resx">
+      <DependentUpon>MMLExpressionPanel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MMLExpressionPanel2.resx">
       <DependentUpon>MMLExpressionPanel2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\NoteRestPanel1.ja.resx">
+      <DependentUpon>NoteRestPanel1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\NoteRestPanel1.resx">
       <DependentUpon>NoteRestPanel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\NoteRestPanel2.ja.resx">
+      <DependentUpon>NoteRestPanel2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\NoteRestPanel2.resx">
       <DependentUpon>NoteRestPanel2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\OutputPartPanel.ja.resx">
+      <DependentUpon>OutputPartPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PanPanel.ja.resx">
+      <DependentUpon>PanPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\PanPanel.resx">
       <DependentUpon>PanPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\PartDataGridView.ja.resx">
+      <DependentUpon>PartDataGridView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\PartDataGridView.resx">
       <DependentUpon>PartDataGridView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\ProgramChangePanel.ja.resx">
+      <DependentUpon>ProgramChangePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\ProgramChangePanel.resx">
       <DependentUpon>ProgramChangePanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\TempoPanel.ja.resx">
+      <DependentUpon>TempoPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\TempoPanel.resx">
       <DependentUpon>TempoPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\TimeBaseForm.ja.resx">
+      <DependentUpon>TimeBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\TimeBaseForm.resx">
       <DependentUpon>TimeBaseForm.cs</DependentUpon>
@@ -306,11 +347,21 @@
     <EmbeddedResource Include="Form\OutputPartPanel.resx">
       <DependentUpon>OutputPartPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\VersionInfoForm.ja.resx">
+      <DependentUpon>VersionInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\VersionInfoForm.resx">
       <DependentUpon>VersionInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\VolumePanel.ja.resx">
+      <DependentUpon>VolumePanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\VolumePanel.resx">
       <DependentUpon>VolumePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ja.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

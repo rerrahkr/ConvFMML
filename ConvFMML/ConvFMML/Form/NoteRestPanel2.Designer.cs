@@ -42,11 +42,11 @@
             // 
             // titleLabel
             // 
-            this.titleLabel.Image = ((System.Drawing.Image)(resources.GetObject("titleLabel.Image")));
-            this.titleLabel.Text = "音符・休符(2)";
+            resources.ApplyResources(this.titleLabel, "titleLabel");
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label5);
@@ -58,89 +58,60 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(180, 55);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 19);
-            this.textBox1.TabIndex = 23;
             this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(4, 53);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label4.Size = new System.Drawing.Size(170, 23);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "タイコマンド指定 :";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // checkBox3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 130);
+            resources.ApplyResources(this.checkBox3, "checkBox3");
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(171, 16);
-            this.checkBox3.TabIndex = 24;
-            this.checkBox3.Text = "休符にタイコマンドを使用しない";
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // comboBox1
             // 
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(180, 7);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(317, 20);
-            this.comboBox1.TabIndex = 26;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(4, 5);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label3.Size = new System.Drawing.Size(170, 23);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "小節をまたぐ音符・休符の表記 :";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // comboBox2
             // 
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(180, 78);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(317, 20);
-            this.comboBox2.TabIndex = 28;
             this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox2_SelectionChangeCommitted);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(4, 76);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label5.Size = new System.Drawing.Size(170, 23);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "タイコマンドを使用した音長設定 :";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // checkBox2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(180, 33);
+            resources.ApplyResources(this.checkBox2, "checkBox2");
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(141, 16);
-            this.checkBox2.TabIndex = 29;
-            this.checkBox2.Text = "途中でブロック分けを行う";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // NoteRest2Panel
+            // NoteRestPanel2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "NoteRest2Panel";
+            this.Name = "NoteRestPanel2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

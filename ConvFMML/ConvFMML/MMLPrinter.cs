@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ConvFMML.Data.MML;
 using ConvFMML.Data.MML.Command;
 using System.IO;
+using ConvFMML.Properties;
 
 namespace ConvFMML
 {
@@ -31,7 +32,7 @@ namespace ConvFMML
                         for (int i = 0; i < part.Length; i++)
                         {
                             Bar bar = part.BarList[i];
-                            str = String.Empty;
+                            str = string.Empty;
 
 
                             if (bar.CommandList.Count > 0)
@@ -182,13 +183,13 @@ namespace ConvFMML
             }
             catch (Exception ex)
             {
-                throw new Exception("MMLデータの '" + path + "' への出力に失敗しました。", ex);
+                throw new Exception(string.Format(Resources.ErrorMMLFailed, path), ex);
             }
         }
 
         private string GenerateHeader(MML mml, Settings settings)
         {
-            string str = String.Empty;
+            string str = string.Empty;
             bool flag = false;
 
             switch (mml.Style)
@@ -209,10 +210,10 @@ namespace ConvFMML
                         var lookUp = mml.PartList.ToLookup(x => x.SoundModule, x => x.Name);
                         if (lookUp[SoundModule.FM].Count() > 0)
                         {
-                            string stemp = String.Empty;
+                            string stemp = string.Empty;
                             foreach (string s in lookUp[SoundModule.FM])
                             {
-                                if (!String.IsNullOrEmpty(s))
+                                if (!string.IsNullOrEmpty(s))
                                 {
                                     stemp += s.Substring(1);
                                 }
@@ -225,10 +226,10 @@ namespace ConvFMML
                         }
                         if (lookUp[SoundModule.SSG].Count() > 0)
                         {
-                            string stemp = String.Empty;
+                            string stemp = string.Empty;
                             foreach (string s in lookUp[SoundModule.SSG])
                             {
-                                if (!String.IsNullOrEmpty(s))
+                                if (!string.IsNullOrEmpty(s))
                                 {
                                     stemp += s.Substring(1);
                                 }
@@ -298,7 +299,7 @@ namespace ConvFMML
                         var lookUp = mml.PartList.ToLookup(x => x.SoundModule, x => x.Name);
                         if (lookUp[SoundModule.FM3ch].Count() > 0)
                         {
-                            string stemp = String.Empty;
+                            string stemp = string.Empty;
                             lookUp[SoundModule.FM3ch].ToList().ForEach(x => stemp += x);
                             if (stemp.Count() > 0)
                             {

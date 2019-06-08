@@ -117,130 +117,45 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="titleLabel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAgYAAAAXCAYAAABwKoe3AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAA7JJREFUeF7t1mNjnmccQPHOtm3btm3bttnZtl2ndmoztVM7VdquXbN27b3cz/8s
+        z/Vqn+C8+H2Gc2pldWplYbVQd3WsgTVDvbWwdmKdglX118V6WD802AAbJjYKDTfGJtgUm2WrGuU2xxaJ
+        LUPJVti6YGXJNtg2NN4usT12wI7Zyia5nbAzdilquit2w+6h2R7YE3uF5ntn/9TYB/uGFvthfxwQWh6Y
+        OAgHh1aH4FAcFlofnjgCRxasaHMUjsYxoe2xieNwfGh3Ak7ESTg5W9E+d0riVJwWSk/HGQXLS8/EWaFD
+        7mycg3NxXra8Y+58XJC4MHS6CBfjktD5UlyGy2v83eUKXImrQtercQ2uLep2Ha7HDaH7jbgJNxf1uAW3
+        4raCqp634w7cWdTrLtyNe0Lve3Ef7g99Hkg8iIdC34fxCB4N/R5LPI4nQv8n8RSeDgOeSTyL5/B8VjUw
+        9wJexEt4Oasq+0/tgmVlr+DVMOg1vI43Em9mywbn3sLbeCcMeRfvJd4PQz/Ah/io4K9hH+OTxKdh+Gf4
+        HF+EEV/iK3xdNPIbfIvvwqjv8QN+DKN/ypbW+Bm/hDG/4jf8XjT2D9RBXdTLlo7L1UcDNCwqb4SSgiXl
+        jdEkjG+KZonmaJEtmZBriVZoHSa2QdtEuzCpPUrRoeDPyR0TndA5TOmCrugWpnZHj0TPMK0XeqNPmN4X
+        /dC/xuIZAzAQZWHmIAzGkKJZQzEMwzEiWzw7NxKjEqNDxRiMLVhUMQ7lYc74xARMxKRs0dzcZEzB1DBv
+        WmI6ZoT5MzELs8OCimxhjTmYGyrnYT4WhIWVNRwDx6CaY+AYOAaOgWPgGDgGcAwcA8fAMXAMHAPHwDFw
+        DKoHwDFwDBwDx8AxcAwcg+r4OwaOgWPgGDgGjoFj4Bg4BnAMHAPHwDFwDBwDxwCOgWPgGDgGjoFj4Bg4
+        Bo5BNcfAMXAMHAPHwDFwDOAYOAaOgWPgGDgGjoFj4BgkHAPHwDFwDBwDx8AxgGPgGDgGjoFj4Bg4Bo6B
+        Y5BwDBwDx8AxcAwcA8cAjoFj4Bg4Bo6BY+AYOAaOQcIxcAwcA8fAMXAMHAM4Bo6BY+AYOAaOgWPgGDgG
+        CcfAMXAMHAPHwDFwDOAYOAaOgWPgGDgGjoFj4BgkHAPHwDFwDBwDx8AxgGPgGDgGjoFj4Bg4Bo6BY5Bw
+        DBwDx8AxcAwcA8cAjoFj4Bg4Bo6BY+AYOAaOQcIxcAwcA8fAMXAMHAM4Bo6BY+AYOAaOgWPw/2NQmf0L
+        cVr2tDH4fbUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="titleLabel.Text" xml:space="preserve">
+    <value>MML表現(2)</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>出力しない</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>出力する</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Count in 1/1 note</value>
+    <value>曲タイトル出力指定</value>
   </data>
-  <data name="&gt;&gt;cancelButton.Name" xml:space="preserve">
-    <value>cancelButton</value>
+  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 16</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>パート名の直後にスペースでなくタブを挿入</value>
   </data>
-  <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 4, 0</value>
-  </data>
-  <data name="&gt;&gt;settingButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="&gt;&gt;numericUpDown1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;numericUpDown1.Name" xml:space="preserve">
-    <value>numericUpDown1</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>278, 87</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cancelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 9</value>
-  </data>
-  <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 52</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="&gt;&gt;settingButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;settingButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="settingButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 19</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="cancelButton.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="settingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 52</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>TimeBaseForm</value>
-  </data>
-  <data name="&gt;&gt;settingButton.Name" xml:space="preserve">
-    <value>settingButton</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="settingButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="settingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 12</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>MML clock count settings</value>
-  </data>
-  <data name="&gt;&gt;cancelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;numericUpDown1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
