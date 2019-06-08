@@ -28,6 +28,7 @@ namespace ConvFMML
             public decimal NewLineBarCount { set; get; } = 2;
             public int NewLineByTimeSignature { set; get; } = 1;
             public int TitleEnable { set; get; } = 1;
+            public bool UseTabAfterPartName { set; get; } = false;
 
             public string Extension
             {

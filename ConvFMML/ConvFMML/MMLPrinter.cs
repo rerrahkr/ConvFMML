@@ -41,7 +41,7 @@ namespace ConvFMML
                                 {
                                     if (settings.outputPart.PrintStyle != 0)
                                     {
-                                        str = part.Name + "\t";
+                                        str = part.Name + (settings.mmlExpression.UseTabAfterPartName ? "\t" : " ");
                                     }
                                     needPartName = false;
 
