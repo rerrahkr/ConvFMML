@@ -78,6 +78,7 @@ namespace ConvFMML.Form
             {
                 case MMLStyle.FMP:
                 case MMLStyle.FMP7:
+                case MMLStyle.MUCOM88:
                 case MMLStyle.Mml2vgm:
                     checkBox3.Enabled = false;
                     break;

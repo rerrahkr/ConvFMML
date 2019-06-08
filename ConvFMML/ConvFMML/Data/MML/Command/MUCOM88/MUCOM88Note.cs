@@ -19,8 +19,7 @@ namespace ConvFMML.Data.MML.Command.MUCOM88
             int dotlen = 0;
             for (int i = 1; i < Length.Count; i++)
             {
-                if (len * 2 == Length[i] && nrSettings.DotEnable &&
-                (nrSettings.DotLength == 0 || dotlen < nrSettings.DotLength))
+                if (len * 2 == Length[i] && nrSettings.DotEnable && dotlen < 1)
                 {
                     str += ".";
                     dotlen++;

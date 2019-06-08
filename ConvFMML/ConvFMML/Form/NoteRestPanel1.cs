@@ -71,6 +71,18 @@ namespace ConvFMML.Form
                     break;
             }
 
+            if (mmlstyle == MMLStyle.MUCOM88)
+            {
+                label6.Enabled = false;
+                numericUpDown1.Enabled = false;
+                label5.Enabled = false;
+            }
+            else
+            {
+                label6.Enabled = true;
+                numericUpDown1.Enabled = true;
+                label5.Enabled = true;
+            }
             groupBox1.Enabled = checkBox1.Checked;
         }
 
