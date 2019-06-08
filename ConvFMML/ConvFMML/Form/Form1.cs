@@ -12,6 +12,7 @@ using ConvFMML.Data.Intermediate;
 using ConvFMML.Data.MML;
 using ConvFMML.Converter;
 using ConvFMML.Modifier;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -30,35 +31,35 @@ namespace ConvFMML.Form
         {
             base.OnLoad(e);
 
-            var treeNode1 = new TreeNode("MML表現(1)");
+            var treeNode1 = new TreeNode(Properties.Resources.MainMenuMMLExpression1);
             var mmlPanel = new MMLExpressionPanel1(settings.mmlExpression);
             mmlPanel.TimeBaseFormButtonClick += new EventHandler(mmlPanel_TimeBaseFormButtonClick);
             mmlPanel.MMLStyleChanged += new EventHandler(mmlPanel_MMLStyleChanged);
             treeNode1.Tag = mmlPanel;
-            var treeNode2 = new TreeNode("MML表現(2)");
+            var treeNode2 = new TreeNode(Resources.MainMenuMMLExpression2);
             treeNode2.Tag = new MMLExpressionPanel2(settings.mmlExpression);
-            var treeNode3 = new TreeNode("音符・休符(1)");
+            var treeNode3 = new TreeNode(Resources.MainMenuNoteRest1);
             treeNode3.Tag = new NoteRestPanel1(settings.noteRest);
-            var treeNode4 = new TreeNode("音符・休符(2)");
+            var treeNode4 = new TreeNode(Resources.MainMenuNoteRest2);
             treeNode4.Tag = new NoteRestPanel2(settings.noteRest, settings.mmlExpression.MMLStyle);
-            var treeNode5 = new TreeNode("全体設定");
+            var treeNode5 = new TreeNode(Resources.MainMenuGeneral);
             treeNode5.Tag = new ControlCommandGenericPanel(settings.controlCommand.generic);
-            var treeNode6 = new TreeNode("音量");
+            var treeNode6 = new TreeNode(Resources.MainMenuVolume);
             treeNode6.Tag = new VolumePanel(settings.controlCommand.volume, settings.mmlExpression.MMLStyle);
-            var treeNode7 = new TreeNode("パン");
+            var treeNode7 = new TreeNode(Resources.MainMenuPan);
             treeNode7.Tag = new PanPanel(settings.controlCommand.pan, settings.mmlExpression.MMLStyle);
-            var treeNode8 = new TreeNode("プログラムチェンジ");
+            var treeNode8 = new TreeNode(Resources.MainMenuProgramChange);
             treeNode8.Tag = new ProgramChangePanel(settings.controlCommand.programChange);
-            var treeNode9 = new TreeNode("テンポ");
+            var treeNode9 = new TreeNode(Resources.MainMenuTempo);
             treeNode9.Tag = new TempoPanel(settings.controlCommand.tempo);
-            var treeNode10 = new TreeNode("各種コマンド", new TreeNode[] {
+            var treeNode10 = new TreeNode(Resources.MainMenuControlCommands, new TreeNode[] {
             treeNode5,
             treeNode6,
             treeNode7,
             treeNode8,
             treeNode9});
             treeNode10.Tag = treeNode5.Tag;
-            var treeNode11 = new TreeNode("出力パート");
+            var treeNode11 = new TreeNode(Resources.MainMenuPart);
             treeNode11.Tag = new OutputPartPanel(settings.outputPart, settings.mmlExpression.MMLStyle);
             treeView1.Nodes.AddRange(new TreeNode[] {
             treeNode1,
@@ -78,11 +79,11 @@ namespace ConvFMML.Form
                 {
                     splitContainer2.Enabled = false;
                     LoadMIDI(fileNameArray[1]);    // Get 1 file only
-                    toolStripStatusLabel1.Text = "準備完了";
+                    toolStripStatusLabel1.Text = Resources.StatusBarReady;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     inputMIDITextBox.Text = prevFileName;
                     toolStripStatusLabel1.Text = "";
                 }
@@ -118,13 +119,13 @@ namespace ConvFMML.Form
                 splitContainer2.Enabled = false;
                 var fileNameArray = (string[])drgevent.Data.GetData(DataFormats.FileDrop, false);
                 LoadMIDI(fileNameArray[0]);    // Get 1 file only
-                toolStripStatusLabel1.Text = "準備完了";
+                toolStripStatusLabel1.Text = Resources.StatusBarReady;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 inputMIDITextBox.Text = prevFileName;
-                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : "準備完了";
+                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : Resources.StatusBarReady;
             }
             finally
             {
@@ -160,7 +161,7 @@ namespace ConvFMML.Form
             {
                 using (var ofd = new OpenFileDialog())
                 {
-                    ofd.Title = "変換するMIDIを参照";
+                    ofd.Title = Resources.InputMIDIDIalogTitle;
                     ofd.Filter = "MIDI File (*.mid)|*.mid|All File (*.*)|*.*";
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
@@ -171,12 +172,12 @@ namespace ConvFMML.Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 inputMIDITextBox.Text = prevFileName;
             }
             finally
             {
-                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : "準備完了";
+                toolStripStatusLabel1.Text = (modTBMusic == null) ? "" : Resources.StatusBarReady;
                 splitContainer2.Enabled = true;
                 splitContainer2.Panel2.Enabled = (modTBMusic != null);
             }
@@ -186,7 +187,7 @@ namespace ConvFMML.Form
         {
             inputMIDITextBox.Text = fileName;
 
-            toolStripStatusLabel1.Text = "\"" + fileName + "\"を読み込み中...";
+            toolStripStatusLabel1.Text = string.Format(Resources.StatusBarLoad, fileName);
             statusStrip1.Update();
 
             var reader = new MIDIReader();
@@ -207,7 +208,7 @@ namespace ConvFMML.Form
 
         private void UpdateMusicdata()
         {
-            toolStripStatusLabel1.Text = "分解能を変更中...";
+            toolStripStatusLabel1.Text = Resources.StatusBarTimeBase;
             statusStrip1.Update();
             SetModifiedMusicData();
 
@@ -230,7 +231,7 @@ namespace ConvFMML.Form
             {
                 using (var sfd = new SaveFileDialog())
                 {
-                    sfd.Title = "名前を付けて保存";
+                    sfd.Title = Resources.ExportAs;
                     sfd.FileName = Path.GetFileName(outputMMLTextBox.Text);
                     sfd.InitialDirectory = Path.GetDirectoryName(outputMMLTextBox.Text);
                     sfd.RestoreDirectory = true;
@@ -285,7 +286,7 @@ namespace ConvFMML.Form
 
                 splitContainer2.Enabled = false;
 
-                toolStripStatusLabel1.Text = "データ整形中...";
+                toolStripStatusLabel1.Text = Resources.StatusBarArrange;
                 statusStrip1.Update();
                 var modifier = MusicDataModifier.Factory(settings.mmlExpression.MMLStyle);
                 List<NotesStatus> statusList = null;
@@ -302,25 +303,25 @@ namespace ConvFMML.Form
                 IntermediateToMMLConverter converter = IntermediateToMMLConverter.Factory(settings.mmlExpression.MMLStyle);
                 MML mml = converter.Convert(modMusic, settings, statusList);
 
-                toolStripStatusLabel1.Text = "MML出力中...";
+                toolStripStatusLabel1.Text = Resources.StatusBarExport;
                 statusStrip1.Update();
                 var printer = new MMLPrinter();
                 printer.Print(mml, outputMMLTextBox.Text, settings);
 
-                toolStripStatusLabel1.Text = "変換完了";
+                toolStripStatusLabel1.Text = Resources.StatusBarComplete;
                 statusStrip1.Update();
-                MessageBox.Show("MIDIをMMLに変換しました。", "変換完了", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show(Resources.SuccessText, Resources.SuccessTitle, MessageBoxButtons.OK, MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
-                toolStripStatusLabel1.Text = "変換失敗";
+                toolStripStatusLabel1.Text = Resources.StatusBarFailed;
                 statusStrip1.Update();
-                MessageBox.Show(ex.Message, "変換失敗", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(ex.Message, Resources.FailedTitle, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
                 SetModifiedMusicData();
-                toolStripStatusLabel1.Text = "準備完了";
+                toolStripStatusLabel1.Text = Resources.StatusBarReady;
                 splitContainer2.Enabled = true;
             }
         }
@@ -365,11 +366,11 @@ namespace ConvFMML.Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                toolStripStatusLabel1.Text = "準備完了";
+                toolStripStatusLabel1.Text = Resources.StatusBarReady;
             }
         }
 

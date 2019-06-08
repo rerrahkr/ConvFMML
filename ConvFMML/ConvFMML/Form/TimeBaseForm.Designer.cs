@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeBaseForm));
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.settingButton = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(192, 12);
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.Maximum = new decimal(new int[] {
             7680,
             0,
@@ -49,8 +50,6 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(130, 19);
-            this.numericUpDown1.TabIndex = 5;
             this.numericUpDown1.Value = new decimal(new int[] {
             192,
             0,
@@ -59,43 +58,31 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.label1.Size = new System.Drawing.Size(174, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "全音符中のMMLカウント数を選択:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // settingButton
             // 
+            resources.ApplyResources(this.settingButton, "settingButton");
             this.settingButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.settingButton.Location = new System.Drawing.Point(148, 52);
             this.settingButton.Name = "settingButton";
-            this.settingButton.Size = new System.Drawing.Size(75, 23);
-            this.settingButton.TabIndex = 6;
-            this.settingButton.Text = "設定";
             this.settingButton.UseVisualStyleBackColor = true;
             this.settingButton.Click += new System.EventHandler(this.settingButton_Click);
             // 
             // cancelButton
             // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(238, 52);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 7;
-            this.cancelButton.Text = "キャンセル";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.settingButton_Click);
             // 
             // TimeBaseForm
             // 
             this.AcceptButton = this.settingButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(334, 87);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.settingButton);
             this.Controls.Add(this.numericUpDown1);
@@ -105,8 +92,6 @@
             this.MinimizeBox = false;
             this.Name = "TimeBaseForm";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MML分解能設定";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 

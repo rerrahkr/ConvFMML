@@ -13,7 +13,7 @@ namespace ConvFMML.Data.MML.Command.FMP7
         protected override string GenerateString(Settings settings, SoundModule module)
         {
             int len = Length[0];
-            string str = String.Empty;
+            string str = string.Empty;
             Settings.NoteRest nrSettings = settings.noteRest;
 
             if (nrSettings.TieStyle == 0 || !CommandRelation.HasFlag(MMLCommandRelation.TieBefore) || CommandRelation.HasFlag(MMLCommandRelation.PrevControl))

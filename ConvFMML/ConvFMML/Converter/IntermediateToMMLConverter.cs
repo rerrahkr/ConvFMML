@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Converter
 {
@@ -56,7 +57,7 @@ namespace ConvFMML.Converter
             }
             catch (Exception ex)
             {
-                throw new Exception("MML形式のデータへの変換に失敗しました。", ex);
+                throw new Exception(Resources.ErrorConverterFailedToMML, ex);
             }
         }
 
@@ -373,7 +374,7 @@ namespace ConvFMML.Converter
             if (ks == null)
             {
                 pos = null;
-                name = String.Empty;
+                name = string.Empty;
             }
             else
             {
@@ -389,7 +390,7 @@ namespace ConvFMML.Converter
                     else
                     {
                         pos = null;
-                        name = String.Empty;
+                        name = string.Empty;
                     }
                 }
                 else
@@ -602,13 +603,13 @@ namespace ConvFMML.Converter
                         case 2:
                             return "\t";
                         default:
-                            return String.Empty;
+                            return string.Empty;
                     }
                 }
             }
             else
             {
-                return String.Empty;
+                return string.Empty;
             }
         }
 

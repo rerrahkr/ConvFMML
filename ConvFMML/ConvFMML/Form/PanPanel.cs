@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -70,7 +71,7 @@ namespace ConvFMML.Form
             switch (mmlStyle)
             {
                 case MMLStyle.FMP7:
-                    comboBox1.Items.AddRange(new string[] { "P数値(0～255)", "PL数値(1～127)、PC、PR数値(1～127)" });
+                    comboBox1.Items.AddRange(new string[] { Resources.PanP, Resources.PanPLPCPR });
                     comboBox1.SelectedIndex = settings.CommandFMP7;
                     groupBox1.Enabled = true;
                     label2.Enabled = false;
@@ -84,7 +85,7 @@ namespace ConvFMML.Form
                     groupBox2.Enabled = false;
                     break;
                 case MMLStyle.Custom:
-                    comboBox1.Items.AddRange(new string[] { "MIDI値を出力", "左、中央、右の3種類で出力" });
+                    comboBox1.Items.AddRange(new string[] { Resources.PanMIDI, Resources.PanLCR });
                     comboBox1.SelectedIndex = settings.CommandCustom;
                     groupBox1.Enabled = true;
                     if (comboBox1.SelectedIndex == 0)

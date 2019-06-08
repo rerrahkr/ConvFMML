@@ -8,7 +8,7 @@ namespace ConvFMML.Data.Intermediate
 {
     public class NotesStatus : ICloneable
     {
-        public string Name { get; set; } = String.Empty;
+        public string Name { get; set; } = string.Empty;
         public int TrackNumber { get; }
         public string TrackName { get; }
         public int NumberInTrack { get; }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ConvFMML.Data.Intermediate;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Form
 {
@@ -89,7 +90,7 @@ namespace ConvFMML.Form
                     row.Cells[1].Value = ns.Name;
                     row.Cells[2].Value = ns.TrackNumber;
                     row.Cells[3].Value = ns.TrackName;
-                    row.Cells[4].Value = (ns.IsEmpty ? "None" : "Exisits");
+                    row.Cells[4].Value = (ns.IsEmpty ? Resources.PartNoteNone : Resources.PartNoteExist);
 
                     var cbc = (DataGridViewComboBoxCell)row.Cells[5];
                     switch (MMLStyle)
@@ -175,8 +176,8 @@ namespace ConvFMML.Form
 
                 if (!status.Printable)
                 {
-                    row.Cells[1].Value = String.Empty;
-                    status.Name = String.Empty;
+                    row.Cells[1].Value = string.Empty;
+                    status.Name = string.Empty;
                     continue;
                 }
 
@@ -197,7 +198,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
@@ -209,7 +210,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
@@ -221,12 +222,12 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
                             default:
-                                name = String.Empty;
+                                name = string.Empty;
                                 backColor = Color.LavenderBlush;
                                 break;
                         }
@@ -257,7 +258,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -289,13 +290,13 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
                             default:
-                                name = String.Empty;
+                                name = string.Empty;
                                 module = SoundModule.FM;
                                 backColor = Color.LavenderBlush;
                                 break;
@@ -320,7 +321,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -346,7 +347,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -373,7 +374,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -387,7 +388,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -401,7 +402,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -415,13 +416,13 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
                             default:
-                                name = String.Empty;
+                                name = string.Empty;
                                 module = SoundModule.FM;
                                 backColor = Color.LavenderBlush;
                                 break;
@@ -437,7 +438,7 @@ namespace ConvFMML.Form
                         }
                         else
                         {
-                            name = String.Empty;
+                            name = string.Empty;
                             module = SoundModule.FM;
                             backColor = Color.LavenderBlush;
                         }
@@ -455,7 +456,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -475,7 +476,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -501,13 +502,13 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.FM;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
                             default:
-                                name = String.Empty;
+                                name = string.Empty;
                                 module = SoundModule.FM;
                                 backColor = Color.LavenderBlush;
                                 break;
@@ -535,7 +536,7 @@ namespace ConvFMML.Form
                         }
                         else
                         {
-                            name = String.Empty;
+                            name = string.Empty;
                             module = SoundModule.FM;
                             backColor = Color.LavenderBlush;
                         }
@@ -559,7 +560,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -585,7 +586,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -605,7 +606,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -631,7 +632,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -645,7 +646,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -665,7 +666,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -691,7 +692,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -705,7 +706,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -725,7 +726,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -751,7 +752,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -765,7 +766,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -785,7 +786,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -811,7 +812,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -825,7 +826,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -839,7 +840,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -853,7 +854,7 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
@@ -867,13 +868,13 @@ namespace ConvFMML.Form
                                 }
                                 else
                                 {
-                                    name = String.Empty;
+                                    name = string.Empty;
                                     module = SoundModule.Others;
                                     backColor = Color.LavenderBlush;
                                 }
                                 break;
                             default:
-                                name = String.Empty;
+                                name = string.Empty;
                                 module = SoundModule.Others;
                                 backColor = Color.LavenderBlush;
                                 break;
@@ -881,7 +882,7 @@ namespace ConvFMML.Form
                         break;
 
                     default:
-                        name = String.Empty;
+                        name = string.Empty;
                         module = SoundModule.FM;
                         backColor = Color.LavenderBlush;
                         break;
@@ -953,7 +954,7 @@ namespace ConvFMML.Form
                     break;
                 case 1:     // PartName
                     string name = row.Cells[e.ColumnIndex].Value?.ToString();
-                    status.Name = (name ?? String.Empty);
+                    status.Name = name ?? string.Empty;
                     break;
                 case 5:     // Soundmodule
                     status.SoundModule = (SoundModule)row.Cells[e.ColumnIndex].Value;

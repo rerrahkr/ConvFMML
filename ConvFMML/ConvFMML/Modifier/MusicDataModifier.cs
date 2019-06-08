@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConvFMML.Data.Intermediate;
 using ConvFMML.Data.Intermediate.Event;
+using ConvFMML.Properties;
 
 namespace ConvFMML.Modifier
 {
@@ -155,7 +156,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("パートの再構築に失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierPartReconstruct, ex);
             }
         }
 
@@ -405,7 +406,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("音符に影響を与えないコマンドの削除に失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierRemoveUselessCommands, ex);
             }
         }
 
@@ -482,7 +483,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("同位置同種のコマンドの処理に失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierOptimizeSamePlaceType, ex);
             }
         }
 
@@ -557,7 +558,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("宣言済みコマンドの削除に失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierOptimizeSameTypeValue, ex);
             }
         }
 
@@ -771,7 +772,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("音符・休符のコマンドによるカットに失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierCutByCommands, ex);
             }
         }
 
@@ -813,7 +814,7 @@ namespace ConvFMML.Modifier
             }
             catch (Exception ex)
             {
-                throw new Exception("小節による音符・休符のカットに失敗しました。", ex);
+                throw new Exception(Resources.ErrorModifierCutByBar, ex);
             }
         }
     }
