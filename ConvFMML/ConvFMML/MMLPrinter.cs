@@ -16,7 +16,8 @@ namespace ConvFMML
         {
             try
             {
-                using (var sw = new StreamWriter(path, false, Encoding.GetEncoding("shift_jis")))
+                using (var sw = new StreamWriter(path, false, Encoding.GetEncoding(
+                    (mml.Style == MMLStyle.Mml2vgm) ? "utf-8" : "shift_jis")))
                 {
                     string str = GenerateHeader(mml, settings);
                     sw.Write(str);
