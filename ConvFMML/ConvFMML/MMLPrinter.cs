@@ -331,6 +331,12 @@ namespace ConvFMML
                         str += " ClockCount=" + mml.CountsPerWholeNote + Environment.NewLine;
                         flag = true;
                     }
+                    if (flag)
+                    {
+                        str = "\'{" + Environment.NewLine +
+                            str +
+                            "}" + Environment.NewLine;
+                    }
                     break;
                 default:
                     break;
