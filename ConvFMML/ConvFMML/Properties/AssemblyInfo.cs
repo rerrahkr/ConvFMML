@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("ConvFMML")]
-[assembly: AssemblyDescription("MIDI→MML Converter")]
+[assembly: AssemblyDescription("MIDI to MML Converter")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RerrahSoft")]
 [assembly: AssemblyProduct("ConvFMML")]
-[assembly: AssemblyCopyright("Copyright © 2017, 2018 Rerrah")]
+[assembly: AssemblyCopyright("Copyright © 2017-2019 Rerrah")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2")]
-[assembly: AssemblyFileVersion("1.0.2")]
+[assembly: AssemblyVersion("1.1.0")]
+[assembly: AssemblyFileVersion("1.1.0")]
