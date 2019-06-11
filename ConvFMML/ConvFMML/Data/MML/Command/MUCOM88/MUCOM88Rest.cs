@@ -13,8 +13,15 @@ namespace ConvFMML.Data.MML.Command.MUCOM88
         protected override string GenerateString(Settings settings, SoundModule module)
         {
             int len = Length[0];
-            string str = "r" + len.ToString();
+            string str = string.Empty;
             Settings.NoteRest nrSettings = settings.noteRest;
+
+            if (nrSettings.UnuseTiedRest || nrSettings.TieStyle == 0 ||
+                (!CommandRelation.HasFlag(MMLCommandRelation.TieBefore) || CommandRelation.HasFlag(MMLCommandRelation.PrevControl)))
+            {
+                str += "r";
+            }
+            str += len.ToString();
 
             int dotlen = 0;
             for (int i = 1; i < Length.Count; i++)
@@ -26,7 +33,14 @@ namespace ConvFMML.Data.MML.Command.MUCOM88
                 }
                 else
                 {
-                    str = str + "r" + Length[i];
+                    if (nrSettings.UnuseTiedRest || nrSettings.TieStyle == 0)     // No Tie
+                    {
+                        str = str + "r" + Length[i];
+                    }
+                    else       // Tie only
+                    {
+                        str = str + "^" + Length[i];
+                    }
                     dotlen = 0;
                 }
                 len = Length[i];
@@ -34,7 +48,10 @@ namespace ConvFMML.Data.MML.Command.MUCOM88
 
             if (!nrSettings.UnuseTiedRest && CommandRelation.HasFlag(MMLCommandRelation.TieAfter) && !CommandRelation.HasFlag(MMLCommandRelation.NextControl))
             {
-                str += "&";
+                if (nrSettings.TieStyle == 1)
+                {
+                    str += "^";
+                }
             }
 
             return str;
