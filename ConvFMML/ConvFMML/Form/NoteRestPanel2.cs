@@ -43,25 +43,14 @@ namespace ConvFMML.Form
             {
                 case MMLStyle.MXDRV:
                 case MMLStyle.NRTDRV:
-                    comboBox2.Items.AddRange(new string[] { Resources.TieLengthStyleC4AndC16, Resources.TieLengthStyleC4Hat16 });
-                    break;
                 case MMLStyle.MUCOM88:
+                    comboBox2.Items.AddRange(new string[] { Resources.TieLengthStyleC4AndC16, Resources.TieLengthStyleC4Hat16 });
                     break;
                 default:
                     comboBox2.Items.AddRange(new string[] { Resources.TieLengthStyleC4AndC16, Resources.TieLengthStyleC4And16 });
                     break;
             }
-            if (mmlStyle == MMLStyle.MUCOM88)
-            {
-                label5.Enabled = false;
-                comboBox2.Enabled = false;
-            }
-            else
-            {
-                label5.Enabled = true;
-                comboBox2.Enabled = true;
-                comboBox2.SelectedIndex = settings.TieStyle;
-            }
+            comboBox2.SelectedIndex = settings.TieStyle;
 
             if (mmlStyle == MMLStyle.Custom)
             {
@@ -78,9 +67,11 @@ namespace ConvFMML.Form
             {
                 case MMLStyle.FMP:
                 case MMLStyle.FMP7:
-                case MMLStyle.MUCOM88:
                 case MMLStyle.Mml2vgm:
                     checkBox3.Enabled = false;
+                    break;
+                case MMLStyle.MUCOM88:
+                    checkBox3.Enabled = (comboBox2.SelectedIndex != 0);
                     break;
                 default:
                     checkBox3.Enabled = true;
@@ -93,10 +84,7 @@ namespace ConvFMML.Form
 
         private void UpdateCheckBox2()
         {
-            checkBox2.Enabled = (
-                comboBox1.SelectedIndex == 1
-                && (!comboBox2.Enabled || comboBox2.SelectedIndex == 0)
-                );
+            checkBox2.Enabled = (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 0);
         }
 
         private void UpdateComboBox1(ComboBox comboBox2)
@@ -104,7 +92,7 @@ namespace ConvFMML.Form
             comboBox1.Items.Clear();
 
             string[] items;
-            if (!comboBox2.Enabled || comboBox2.SelectedIndex == 0)
+            if (comboBox2.SelectedIndex == 0)
             {
                 items = new string[] { Resources.OverMeasureC4, Resources.OverMeasureC8AndC8 };
             }
@@ -151,6 +139,11 @@ namespace ConvFMML.Form
             var cb = (ComboBox)sender;
             settings.TieStyle = cb.SelectedIndex;
             UpdateComboBox1(cb);
+
+            if (mmlStyle == MMLStyle.MUCOM88)
+            {
+                checkBox3.Enabled = (cb.SelectedIndex != 0);
+            }
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
