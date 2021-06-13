@@ -9,6 +9,8 @@ Copyright (C) 2017-2019 Rerrah
 
 [日本語](./README_ja.md)
 
+> :warning: This project is no longer maintained.
+
 ## Overview
 ConvFMML is an application that converts standard MIDI file (SMF/MIDI) into Music Macro Language (MML).
 

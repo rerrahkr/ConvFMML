@@ -9,6 +9,8 @@ Copyright (C) 2017-2019 Rerrah
 
 [English](./README.md)
 
+> :warning: このプロジェクトはもう管理されていません。
+
 ## 概要
 ConvFMMLはスタンダードMIDIファイル(SMF/MIDI)をミュージックマクロランゲージ(MML)形式に変換するソフトです。  
 以下のような処理が可能です。
